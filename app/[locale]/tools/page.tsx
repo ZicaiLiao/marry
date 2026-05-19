@@ -28,6 +28,7 @@ export default function ToolsPage({ params }: ToolsPageProps) {
         content={content.toolsPage}
         checklistGroups={content.checklistGroups}
         budgetItems={content.budgetItems}
+        timelineStages={content.timelineStages}
       />
     </>
   );

@@ -1,3 +1,4 @@
+import { InquiryForm } from "@/components/inquiry-form";
 import { isLocale } from "@/lib/i18n";
 import { getLocaleContent, siteConfig } from "@/lib/site-data";
 
@@ -20,6 +21,14 @@ export default function AboutPage({ params }: AboutPageProps) {
         <span className="page-intro__eyebrow">{content.aboutPage.eyebrow}</span>
         <h1 className="page-intro__title">{content.aboutPage.title}</h1>
         <p className="page-intro__body">{content.aboutPage.body}</p>
+      </section>
+
+      <section className="container section">
+        <InquiryForm
+          locale={params.locale}
+          content={content.aboutPage.form}
+          destinationEmail={siteConfig.email}
+        />
       </section>
 
       <section className="container section">

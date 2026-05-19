@@ -36,19 +36,82 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         <SectionHeader
           eyebrow={content.servicesPage.eyebrow}
           title={content.servicesPage.processTitle}
-          body={content.home.services.body}
+          body={content.servicesPage.processBody}
         />
         <div className="grid-two">
           {content.servicesPage.process.map((step, index) => (
-            <article key={step} className="feature-card">
+            <article key={step.title} className="feature-card">
               <span className="feature-card__index">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{step}</h3>
-              <p>
-                {params.locale === "zh"
-                  ? "每一步都围绕关系感、体验感与执行可行性展开，确保审美判断能落地。"
-                  : "Each step balances emotional intent, guest experience, and what can truly be executed well."}
-              </p>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container section">
+        <SectionHeader
+          eyebrow={content.servicesPage.eyebrow}
+          title={content.servicesPage.packagesTitle}
+          body={content.servicesPage.packagesBody}
+        />
+        <div className="service-grid">
+          {content.servicesPage.packages.map((item) => (
+            <article key={item.title} className="package-card">
+              <div className="package-card__meta">
+                <span className="eyebrow">{item.priceNote}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <p className="package-card__ideal">{item.idealFor}</p>
+              <ul>
+                {item.includes.map((entry) => (
+                  <li key={entry}>{entry}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container section">
+        <SectionHeader
+          eyebrow={content.servicesPage.eyebrow}
+          title={content.servicesPage.casesTitle}
+          body={content.servicesPage.casesBody}
+        />
+        <div className="grid-two">
+          {content.servicesPage.cases.map((item) => (
+            <article key={item.title} className="case-card">
+              <div className="story-card__meta">
+                <span className="chip">{item.location}</span>
+                <span className="chip">{item.season}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <ul>
+                {item.deliverables.map((entry) => (
+                  <li key={entry}>{entry}</li>
+                ))}
+              </ul>
+              <div className="case-card__result">{item.result}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container section">
+        <SectionHeader
+          eyebrow={content.servicesPage.eyebrow}
+          title={content.servicesPage.faqTitle}
+          body={content.servicesPage.faqBody}
+        />
+        <div className="faq-list">
+          {content.servicesPage.faqs.map((item) => (
+            <details key={item.question} className="faq-item">
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
           ))}
         </div>
       </section>

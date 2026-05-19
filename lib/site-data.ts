@@ -36,7 +36,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
         stats: [
           { label: "故事策划章节", value: "12+" },
           { label: "审美主题方向", value: "08" },
-          { label: "备婚工具模块", value: "02" }
+          { label: "备婚工具模块", value: "04" }
         ],
         visualQuote: "让一场婚礼不止好看，也足够像你们。",
         visualBody:
@@ -81,7 +81,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
         eyebrow: "Planning Tools",
         title: "从浏览灵感，到开始准备，只需要一点点被好好组织。",
         body:
-          "V1 先提供婚礼清单和预算规划器，让网站在展示之外，真正具备留存价值。"
+          "V1 先提供婚礼清单、预算、时间线与宾客管理，让网站在展示之外，真正具备留存价值。"
       },
       cta: {
         title: "如果你正在想象一场属于你们的婚礼，我们可以先从一个方向开始。",
@@ -119,9 +119,92 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Services",
       title: "我们不把婚礼做成同一种样子，而是陪你找到那场婚礼为什么非你们不可。",
       body:
-        "服务模块强调协作关系、审美判断与执行细节。页面结构已经为后续真实案例、报价方式与咨询表单预留空间。",
+        "服务页把方法、套餐边界、真实案例与常见问题放在同一个叙事里，帮助访客更快判断 Marry 是否适合自己。",
       processTitle: "合作节奏",
-      process: ["认识你们与场景设定", "主题叙事与视觉提案", "预算与供应商协同", "现场统筹与最终落地"]
+      processBody: "从第一次交流到婚礼落地，我们把抽象偏好翻译成可执行的视觉、预算和现场体验。",
+      process: [
+        {
+          title: "认识你们与场景设定",
+          description: "先理解关系状态、婚礼规模、城市与想要留下的感受，而不是先推一套现成答案。"
+        },
+        {
+          title: "主题叙事与视觉提案",
+          description: "把你们喜欢的气质、材质、音乐和空间感，整理成统一的婚礼方向。"
+        },
+        {
+          title: "预算与供应商协同",
+          description: "明确预算优先级，匹配适合的场地、影像、花艺与执行团队。"
+        },
+        {
+          title: "现场统筹与最终落地",
+          description: "把彩排、桌位、物料、时间线和现场联系人真正接起来，保证当日节奏稳定。"
+        }
+      ],
+      packagesTitle: "服务套餐",
+      packagesBody: "V1 先提供三种清晰协作方式，既保留高级感，也让服务边界足够明确。",
+      packages: [
+        {
+          title: "Editorial Planning",
+          priceNote: "适合中大型婚礼",
+          description: "完整婚礼策划与视觉统筹，从前期方向到婚礼当天全程把控。",
+          idealFor: "适合希望由一支团队统筹创意、预算、供应商与现场节奏的新人。",
+          includes: ["整体概念与视觉提案", "预算结构与供应商协同", "流程设计、彩排与当天统筹"]
+        },
+        {
+          title: "Design Direction",
+          priceNote: "适合已有基础筹备",
+          description: "聚焦婚礼美学与空间表达，让已有计划更完整、更统一。",
+          idealFor: "适合已确定场地或主团队，但需要提升视觉语言与细节表达的新人。",
+          includes: ["色板与材质方向", "花艺与纸品视觉建议", "现场重点区域设计说明"]
+        },
+        {
+          title: "Planning Session",
+          priceNote: "轻量咨询入口",
+          description: "以一次高密度咨询帮助你理顺方向、预算和优先级。",
+          idealFor: "适合刚开始筹备、仍在比较不同做法，想先把思路理顺的情侣。",
+          includes: ["90 分钟策略沟通", "问题梳理与优先级建议", "会后行动摘要"]
+        }
+      ],
+      casesTitle: "案例片段",
+      casesBody: "不是用华丽词藻堆砌结果，而是把每场婚礼如何被组织出来，讲清楚。",
+      cases: [
+        {
+          title: "海边薄暮晚宴",
+          location: "舟山",
+          season: "初夏",
+          summary: "围绕盐感空气、丝缎纹理和长桌烛光，做出一场更偏晚宴感的海边婚礼。",
+          deliverables: ["整体策划", "视觉与花艺方向", "宾客动线和晚宴流程"],
+          result: "宾客抵达、日落仪式与晚宴衔接自然，婚礼照片呈现出稳定统一的薄暮色调。"
+        },
+        {
+          title: "山谷誓言周末",
+          location: "安吉",
+          season: "夏末",
+          summary: "把住宿、欢迎晚宴、婚礼正日和次日 brunch 组织成一个完整周末体验。",
+          deliverables: ["周末时间线规划", "供应商协同", "伴手礼与住宿接待细节"],
+          result: "婚礼不再只是当天的仪式，而是一场让亲友慢慢进入情绪的连续叙事。"
+        }
+      ],
+      faqTitle: "常见问题",
+      faqBody: "把最常被问到的预算、周期和合作方式先回答清楚，能让第一次咨询轻松很多。",
+      faqs: [
+        {
+          question: "通常需要提前多久开始筹备？",
+          answer: "如果是完整婚礼，建议至少提前 6 到 12 个月开始；目的地或旺季档期越热门，越值得更早启动。"
+        },
+        {
+          question: "Marry 会提供固定报价吗？",
+          answer: "我们会先根据规模、城市、服务范围给出匹配建议，再形成更准确的合作方案，而不是只发一张模板价目表。"
+        },
+        {
+          question: "如果我已经订了场地或摄影，还能合作吗？",
+          answer: "可以。设计统筹或咨询型合作非常适合已经完成部分预订、但仍希望整体气质更统一的新人。"
+        },
+        {
+          question: "外地婚礼或旅行婚礼可以接吗？",
+          answer: "可以，只要时间线和供应商协同条件合适，我们也会一起评估异地执行的可行性与预算结构。"
+        }
+      ]
     },
     toolsPage: {
       eyebrow: "Planning Tools",
@@ -144,13 +227,55 @@ export const localeContent: Record<Locale, LocaleContent> = {
         averageLabel: "平均单项",
         shareLabel: "当前占比",
         currencySymbol: "¥"
+      },
+      timeline: {
+        title: "Timeline Planner",
+        body: "把婚礼前 12 个月的重要节点按节奏排开，知道这一阶段真正该推进什么。",
+        monthLabel: "建议时间",
+        noteLabel: "你的备注",
+        summaryLabel: "当前状态",
+        statuses: {
+          todo: "未开始",
+          progress: "进行中",
+          booked: "已确认"
+        }
+      },
+      guestManager: {
+        title: "Guest Manager",
+        body: "先把宾客名单、关系分组和回复状态整理起来，后面的桌位、住宿与接待会轻松很多。",
+        addLabel: "添加宾客",
+        nameLabel: "宾客姓名",
+        namePlaceholder: "例如：Lily Zhang",
+        sideLabel: "关系分组",
+        sidePlaceholder: "例如：新娘朋友 / 家人 / 同事",
+        statusLabel: "回复状态",
+        tableLabel: "桌位 / 安排",
+        tablePlaceholder: "例如：主桌 / 2 号桌 / 酒店接送",
+        noteLabel: "备注",
+        notePlaceholder: "饮食偏好、住宿安排、需要特别照顾的地方。",
+        emptyLabel: "还没有添加宾客，可以先从最核心的家人和伴郎伴娘开始。",
+        totalLabel: "总人数",
+        confirmedLabel: "已确认",
+        pendingLabel: "待回复",
+        statuses: {
+          pending: "待回复",
+          confirmed: "已确认",
+          declined: "无法出席"
+        }
+      },
+      plannerSummary: {
+        title: "Planning Snapshot",
+        body: "自动汇总清单进度、预算体量、时间线重点与宾客状态，适合整理成一次讨论纪要。",
+        copyCta: "复制摘要",
+        copiedCta: "已复制",
+        resetCta: "重置工具数据"
       }
     },
     aboutPage: {
       eyebrow: "About / Contact",
       title: "Marry 想做的，不只是把婚礼做得漂亮，而是让它被记得更久一点。",
       body:
-        "这一页既承接品牌介绍，也承接轻量联系入口。V1 不做复杂表单，但会明确告诉访客如何继续对话。",
+        "这一页既承接品牌介绍，也承接真实咨询入口。你可以先整理基础信息，再直接把需求发到 Marry 的工作流里。",
       notes: [
         {
           label: "Email",
@@ -174,7 +299,37 @@ export const localeContent: Record<Locale, LocaleContent> = {
           title: "保持克制而有回应",
           description: "我们会优先理解婚礼想表达的关系感，而不是先给你一份模板报价。"
         }
-      ]
+      ],
+      form: {
+        title: "咨询表单",
+        body: "先把基础信息整理出来，再直接提交给 Marry；如果你更习惯邮件，也可以用下方的邮件入口作为备用方式。",
+        namesLabel: "你们的称呼",
+        namesPlaceholder: "例如：Luna & Chen",
+        emailLabel: "联系邮箱",
+        emailPlaceholder: "you@example.com",
+        cityLabel: "婚礼城市",
+        cityPlaceholder: "例如：上海 / 杭州 / 三亚",
+        dateLabel: "预计日期",
+        guestLabel: "宾客规模",
+        guestPlaceholder: "例如：80 人左右",
+        budgetLabel: "预算范围",
+        focusLabel: "当前最想优先解决的事",
+        noteLabel: "想告诉 Marry 的补充说明",
+        notePlaceholder: "可以写下你们喜欢的婚礼气质、目前卡住的问题、想做成什么样的现场。",
+        budgetOptions: ["20 万以内", "20 - 35 万", "35 - 50 万", "50 万以上", "还在评估"],
+        focusOptions: ["整体策划", "场地与视觉方向", "摄影摄像", "预算梳理", "先聊聊整体方向"],
+        saveLabel: "保存草稿",
+        clearLabel: "清空内容",
+        submitLabel: "发送咨询",
+        sendingLabel: "发送中...",
+        successMessage: "咨询已发送，我们会尽快回复你。",
+        errorMessage: "发送失败，请稍后重试，或改用邮件方式联系。",
+        unavailableMessage: "当前站点还没有配置邮件服务，请先设置 Resend 环境变量。",
+        mailtoLabel: "生成咨询邮件",
+        draftHint: "草稿会保存在当前浏览器，方便回来继续补充。",
+        summaryTitle: "你将发送的重点",
+        summaryEmpty: "填写左侧内容后，这里会自动整理成一份简洁摘要。"
+      }
     },
     footer: {
       title: "Marry",
@@ -245,11 +400,18 @@ export const localeContent: Record<Locale, LocaleContent> = {
         highlights: ["即时计算", "占比展示", "适合前期预估"]
       },
       {
-        title: "Timeline Notes",
-        description: "为后续扩展预留的时间线模块，用于整理拍摄、彩排和宾客到场节奏。",
-        status: "Coming Soon",
+        title: "Timeline Planner",
+        description: "按月份梳理婚礼前的重要节点，把“该什么时候推进什么”这件事提前说清楚。",
+        status: "Ready in V1",
         href: "/zh/tools",
-        highlights: ["模块预留", "适配后续版本", "不影响当前结构"]
+        highlights: ["阶段推进", "备注整理", "适合沟通纪要"]
+      },
+      {
+        title: "Guest Manager",
+        description: "把宾客名单、回复状态和桌位安排先整理起来，为后续执行打好底。",
+        status: "Ready in V1",
+        href: "/zh/tools",
+        highlights: ["名单录入", "RSVP 状态", "桌位备注"]
       }
     ],
     checklistGroups: [
@@ -288,6 +450,14 @@ export const localeContent: Record<Locale, LocaleContent> = {
       { id: "photo", label: "摄影摄像", tip: "记录婚礼当日的重要内容", defaultAmount: 26000 },
       { id: "dress", label: "礼服与造型", tip: "包含服装、妆发与配饰", defaultAmount: 18000 },
       { id: "guest", label: "宾客体验", tip: "伴手礼、住宿接待或交通安排", defaultAmount: 12000 }
+    ],
+    timelineStages: [
+      { id: "twelve", month: "婚礼前 12 个月", title: "确定婚礼方向", focus: "先定城市、季节、宾客规模和整体语气。" },
+      { id: "ten", month: "婚礼前 10 个月", title: "锁定场地和主团队", focus: "确认场地、策划或核心合作方，保证热门档期不被错过。" },
+      { id: "eight", month: "婚礼前 8 个月", title: "建立预算结构", focus: "把重要预算项拆出来，确认哪些部分最值得投入。" },
+      { id: "six", month: "婚礼前 6 个月", title: "推进视觉与影像", focus: "开始敲定花艺、平面物料和摄影摄像档期。" },
+      { id: "three", month: "婚礼前 3 个月", title: "完成宾客与流程细化", focus: "把邀请、住宿、桌位和流程节点拉回到执行层。" },
+      { id: "one", month: "婚礼前 1 个月", title: "统筹最终确认", focus: "确认彩排、物料、支付节点与当日联系人。" }
     ]
   },
   en: {
@@ -318,7 +488,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
         stats: [
           { label: "Story chapters", value: "12+" },
           { label: "Editorial themes", value: "08" },
-          { label: "Planning tools", value: "02" }
+          { label: "Planning tools", value: "04" }
         ],
         visualQuote: "A wedding should feel beautiful, but even more importantly, unmistakably yours.",
         visualBody:
@@ -363,7 +533,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
         eyebrow: "Planning Tools",
         title: "From collecting inspiration to taking action, it only takes a little structure.",
         body:
-          "V1 begins with a checklist and a budget planner so the site offers something visitors can return to, not only admire."
+          "V1 begins with a checklist, budget planner, timeline view, and guest manager so the site offers something visitors can return to, not only admire."
       },
       cta: {
         title: "If you are imagining a wedding that feels deeply your own, begin with a direction.",
@@ -401,13 +571,97 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Services",
       title: "We are not interested in making every wedding look the same. We are here to uncover why yours could belong to no one else.",
       body:
-        "The services section is centered on collaboration, aesthetic discernment, and execution detail, with clear room to grow into inquiries and real casework later.",
+        "This page now brings together method, package framing, real case snapshots, and practical FAQs so visitors can quickly understand how Marry works.",
       processTitle: "How We Work",
+      processBody:
+        "From the first conversation to the wedding day itself, we translate taste and emotion into clear decisions, aligned budgets, and an atmosphere guests can actually feel.",
       process: [
-        "Getting to know the couple and the setting",
-        "Narrative concept and visual direction",
-        "Budget alignment and vendor collaboration",
-        "On-site coordination and final realization"
+        {
+          title: "Getting to know the couple and the setting",
+          description: "We begin with the relationship, guest scale, city, and emotional tone rather than forcing a ready-made formula."
+        },
+        {
+          title: "Narrative concept and visual direction",
+          description: "We shape references, materials, music, and spatial mood into a wedding language that feels coherent."
+        },
+        {
+          title: "Budget alignment and vendor collaboration",
+          description: "Budgets are structured around priorities so venue, imagery, florals, and logistics can support the same vision."
+        },
+        {
+          title: "On-site coordination and final realization",
+          description: "Run-of-show, rehearsal, guest flow, and final handoff are tied together so the day feels steady and intentional."
+        }
+      ],
+      packagesTitle: "Packages",
+      packagesBody:
+        "V1 introduces three clear ways to work together, giving the site more substance without flattening the experience into a sales grid.",
+      packages: [
+        {
+          title: "Editorial Planning",
+          priceNote: "For full-scale celebrations",
+          description: "A complete planning and creative-direction service from first concept to final coordination.",
+          idealFor:
+            "Best for couples who want one team to shape concept, budget priorities, vendors, and on-site rhythm together.",
+          includes: ["Concept and visual narrative", "Budget structure and vendor alignment", "Timeline design, rehearsal, and wedding-day coordination"]
+        },
+        {
+          title: "Design Direction",
+          priceNote: "For couples with a planning base already in place",
+          description: "A focused service for visual clarity, spatial mood, and elevated design cohesion.",
+          idealFor:
+            "Best for couples who already have a venue or core team, but want the wedding to feel more considered and unified.",
+          includes: ["Palette and material direction", "Florals and paper styling guidance", "Design notes for key guest-facing areas"]
+        },
+        {
+          title: "Planning Session",
+          priceNote: "Lightweight strategic entry point",
+          description: "A concentrated consultation to bring direction, budget logic, and immediate next steps into focus.",
+          idealFor:
+            "Best for couples in the early stages who want clarity before committing to a larger planning structure.",
+          includes: ["90-minute strategy session", "Priority mapping and decision guidance", "A written summary of next actions"]
+        }
+      ],
+      casesTitle: "Case Notes",
+      casesBody:
+        "Rather than describing beauty in the abstract, these snapshots show how a wedding is actually shaped from idea into experience.",
+      cases: [
+        {
+          title: "Coastal Dusk Supper",
+          location: "Zhoushan",
+          season: "Early Summer",
+          summary: "A sea-facing wedding built around salt air, silk textures, and the intimacy of a long-table evening.",
+          deliverables: ["Full planning", "Visual and floral direction", "Guest flow and dinner pacing"],
+          result: "Arrival, ceremony, sunset transition, and dinner all moved with calm continuity, while the imagery held a consistent dusk palette."
+        },
+        {
+          title: "Valley Vow Weekend",
+          location: "Anji",
+          season: "Late Summer",
+          summary: "A multi-day wedding weekend shaped to include lodging, welcome dinner, the ceremony day, and a quiet brunch goodbye.",
+          deliverables: ["Weekend timeline planning", "Vendor coordination", "Guest gifting and hospitality details"],
+          result: "The celebration felt like a sustained emotional arc instead of a single event confined to one afternoon."
+        }
+      ],
+      faqTitle: "FAQ",
+      faqBody: "A first conversation becomes much easier when the usual questions on timing, pricing, and scope are answered in advance.",
+      faqs: [
+        {
+          question: "How early should we begin planning?",
+          answer: "For a full wedding, six to twelve months ahead is a healthy window. Destination weddings or peak-season dates often benefit from starting even earlier."
+        },
+        {
+          question: "Do you offer fixed package pricing from the start?",
+          answer: "We usually begin with guest scale, city, and service scope, then shape a more accurate proposal instead of sending a generic price sheet too early."
+        },
+        {
+          question: "Can we still work together if we already booked a venue or photographer?",
+          answer: "Yes. Design-direction or consultation-based support works especially well for couples who already secured part of the team but want stronger cohesion."
+        },
+        {
+          question: "Do you take destination weddings?",
+          answer: "Yes, as long as the timeline, travel realities, and vendor coordination can support a thoughtful execution plan."
+        }
       ]
     },
     toolsPage: {
@@ -431,13 +685,55 @@ export const localeContent: Record<Locale, LocaleContent> = {
         averageLabel: "Average Item",
         shareLabel: "Current Share",
         currencySymbol: "$"
+      },
+      timeline: {
+        title: "Timeline Planner",
+        body: "Lay out the key milestones across the twelve months before the wedding so each season of planning has a clear purpose.",
+        monthLabel: "Suggested Window",
+        noteLabel: "Your Notes",
+        summaryLabel: "Current Status",
+        statuses: {
+          todo: "Not Started",
+          progress: "In Progress",
+          booked: "Confirmed"
+        }
+      },
+      guestManager: {
+        title: "Guest Manager",
+        body: "Organize names, guest circles, RSVP status, and table notes early so the hospitality side of planning stays calm later on.",
+        addLabel: "Add guest",
+        nameLabel: "Guest name",
+        namePlaceholder: "For example: Lily Zhang",
+        sideLabel: "Circle / Side",
+        sidePlaceholder: "For example: Family / Bride's friends / Colleagues",
+        statusLabel: "RSVP status",
+        tableLabel: "Table / Plan",
+        tablePlaceholder: "For example: Head table / Table 2 / Hotel transfer",
+        noteLabel: "Notes",
+        notePlaceholder: "Dietary notes, lodging details, or anything that needs extra care.",
+        emptyLabel: "No guests added yet. Start with immediate family, the wedding party, or the friends you are planning around first.",
+        totalLabel: "Total Guests",
+        confirmedLabel: "Confirmed",
+        pendingLabel: "Pending",
+        statuses: {
+          pending: "Pending",
+          confirmed: "Confirmed",
+          declined: "Declined"
+        }
+      },
+      plannerSummary: {
+        title: "Planning Snapshot",
+        body: "A quick summary of checklist progress, budget scale, timeline focus points, and guest status you can reuse in planning conversations.",
+        copyCta: "Copy summary",
+        copiedCta: "Copied",
+        resetCta: "Reset planner"
       }
     },
     aboutPage: {
       eyebrow: "About / Contact",
       title: "Marry is not only about making a wedding look beautiful. It is about helping it stay memorable for longer.",
       body:
-        "This page introduces the platform and keeps the contact path light. V1 does not need a full inquiry system to make the next step feel clear.",
+        "This page introduces the platform and now includes a live inquiry path. Couples can organize the essentials first, then send them directly into Marry's workflow.",
       notes: [
         {
           label: "Email",
@@ -461,7 +757,37 @@ export const localeContent: Record<Locale, LocaleContent> = {
           title: "Measured, thoughtful replies",
           description: "We start by understanding the relationship a wedding wants to express before we ever reduce it to a package."
         }
-      ]
+      ],
+      form: {
+        title: "Inquiry Form",
+        body: "Gather the essential details first, then send them directly to Marry. If you prefer email, a mailto fallback is still available below.",
+        namesLabel: "Your names",
+        namesPlaceholder: "For example: Luna & Chen",
+        emailLabel: "Contact email",
+        emailPlaceholder: "you@example.com",
+        cityLabel: "Wedding city",
+        cityPlaceholder: "For example: Shanghai / Hangzhou / Sanya",
+        dateLabel: "Preferred date",
+        guestLabel: "Guest count",
+        guestPlaceholder: "For example: around 80 guests",
+        budgetLabel: "Budget range",
+        focusLabel: "What needs the most help right now",
+        noteLabel: "Anything else you want Marry to know",
+        notePlaceholder: "Share the mood you love, what feels unresolved, or what you hope the celebration will become.",
+        budgetOptions: ["Under $30k", "$30k - $50k", "$50k - $75k", "$75k+", "Still exploring"],
+        focusOptions: ["Full planning", "Venue and visual direction", "Photo and film", "Budget shaping", "A first strategic conversation"],
+        saveLabel: "Save draft",
+        clearLabel: "Clear form",
+        submitLabel: "Send inquiry",
+        sendingLabel: "Sending...",
+        successMessage: "Your inquiry has been sent. We will reply as soon as we can.",
+        errorMessage: "Sending failed. Please try again shortly, or use the email fallback below.",
+        unavailableMessage: "Email service is not configured yet. Please add the Resend environment variables first.",
+        mailtoLabel: "Create inquiry email",
+        draftHint: "This draft stays in the current browser so you can return and refine it later.",
+        summaryTitle: "What your inquiry will cover",
+        summaryEmpty: "Once you start filling the form, this area will shape the key talking points for your first note."
+      }
     },
     footer: {
       title: "Marry",
@@ -532,11 +858,18 @@ export const localeContent: Record<Locale, LocaleContent> = {
         highlights: ["Instant totals", "Share breakdown", "Useful for early planning"]
       },
       {
-        title: "Timeline Notes",
-        description: "A reserved module for future releases, built to eventually hold rehearsal, photo, and guest flow timing.",
-        status: "Coming Soon",
+        title: "Timeline Planner",
+        description: "Map the major milestones by month so everyone knows what should move forward, and when.",
+        status: "Ready in V1",
         href: "/en/tools",
-        highlights: ["Reserved slot", "Future-ready", "No impact on current structure"]
+        highlights: ["Milestone planning", "Structured notes", "Useful for team syncs"]
+      },
+      {
+        title: "Guest Manager",
+        description: "Track names, RSVP progress, and seating notes before hospitality details start to spread across multiple chats.",
+        status: "Ready in V1",
+        href: "/en/tools",
+        highlights: ["Guest list", "RSVP status", "Table notes"]
       }
     ],
     checklistGroups: [
@@ -575,6 +908,14 @@ export const localeContent: Record<Locale, LocaleContent> = {
       { id: "photo", label: "Photo and Film", tip: "Captures what the day becomes afterward", defaultAmount: 3800 },
       { id: "dress", label: "Wardrobe and Beauty", tip: "Outfits, tailoring, hair, makeup, accessories", defaultAmount: 2600 },
       { id: "guest", label: "Guest Experience", tip: "Favors, lodging support, transport, or welcome details", defaultAmount: 1800 }
+    ],
+    timelineStages: [
+      { id: "twelve", month: "12 months before", title: "Set the wedding direction", focus: "Define city, season, guest count, and the emotional tone of the day." },
+      { id: "ten", month: "10 months before", title: "Secure venue and the core team", focus: "Lock in the venue and foundational collaborators before the most desirable dates disappear." },
+      { id: "eight", month: "8 months before", title: "Shape the budget structure", focus: "Clarify where budget should stretch and where restraint will protect the bigger vision." },
+      { id: "six", month: "6 months before", title: "Advance visual and image work", focus: "Move florals, printed materials, and photo or film bookings into real decisions." },
+      { id: "three", month: "3 months before", title: "Refine guests and flow", focus: "Bring invitations, lodging, seating, and ceremony timing into execution detail." },
+      { id: "one", month: "1 month before", title: "Confirm final logistics", focus: "Review rehearsal, materials, payment timing, and every point of contact for the day." }
     ]
   }
 };
