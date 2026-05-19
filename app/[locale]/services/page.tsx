@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
+import { StructuredData } from "@/components/structured-data";
 import { isLocale } from "@/lib/i18n";
-import { getLocaleContent } from "@/lib/site-data";
+import { getLocaleContent, siteConfig } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 type ServicesPageProps = {
   params: {
@@ -9,15 +12,59 @@ type ServicesPageProps = {
   };
 };
 
+export function generateMetadata({ params }: ServicesPageProps): Metadata {
+  if (!isLocale(params.locale)) {
+    return {};
+  }
+
+  const content = getLocaleContent(params.locale);
+
+  return buildPageMetadata({
+    locale: params.locale,
+    slug: "services",
+    title: content.pageMeta.services.title,
+    description: content.pageMeta.services.description,
+    keywords: content.pageMeta.services.keywords,
+    image: "/images/hero-main.jpg"
+  });
+}
+
 export default function ServicesPage({ params }: ServicesPageProps) {
   if (!isLocale(params.locale)) {
     return null;
   }
 
   const content = getLocaleContent(params.locale);
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: content.pageMeta.services.title,
+      provider: {
+        "@type": "Organization",
+        name: siteConfig.brand,
+        url: siteConfig.siteUrl
+      },
+      description: content.pageMeta.services.description,
+      areaServed: params.locale === "zh" ? "China" : "Global"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: content.servicesPage.faqs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer
+        }
+      }))
+    }
+  ];
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <section className="container page-intro">
         <span className="page-intro__eyebrow">{content.servicesPage.eyebrow}</span>
         <h1 className="page-intro__title">{content.servicesPage.title}</h1>

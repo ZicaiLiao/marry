@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { InquiryForm } from "@/components/inquiry-form";
+import { StructuredData } from "@/components/structured-data";
 import { isLocale } from "@/lib/i18n";
 import { getLocaleContent, siteConfig } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 type AboutPageProps = {
   params: {
@@ -8,15 +11,52 @@ type AboutPageProps = {
   };
 };
 
+export function generateMetadata({ params }: AboutPageProps): Metadata {
+  if (!isLocale(params.locale)) {
+    return {};
+  }
+
+  const content = getLocaleContent(params.locale);
+
+  return buildPageMetadata({
+    locale: params.locale,
+    slug: "about",
+    title: content.pageMeta.about.title,
+    description: content.pageMeta.about.description,
+    keywords: content.pageMeta.about.keywords,
+    image: "/images/hero-main.jpg"
+  });
+}
+
 export default function AboutPage({ params }: AboutPageProps) {
   if (!isLocale(params.locale)) {
     return null;
   }
 
   const content = getLocaleContent(params.locale);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: content.pageMeta.about.title,
+    description: content.pageMeta.about.description,
+    url: `${siteConfig.siteUrl}/${params.locale}/about`,
+    mainEntity: {
+      "@type": "Organization",
+      name: siteConfig.brand,
+      email: siteConfig.email,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          email: siteConfig.email,
+          contactType: "wedding planning inquiry"
+        }
+      ]
+    }
+  };
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <section className="container page-intro">
         <span className="page-intro__eyebrow">{content.aboutPage.eyebrow}</span>
         <h1 className="page-intro__title">{content.aboutPage.title}</h1>

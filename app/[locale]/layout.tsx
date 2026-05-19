@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { isLocale, locales } from "@/lib/i18n";
 import { getLocaleContent } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 import { Locale } from "@/lib/types";
 
 type LocaleLayoutProps = {
@@ -27,16 +28,12 @@ export async function generateMetadata({
 
   const content = getLocaleContent(locale);
 
-  return {
-    title: content.meta.title,
-    description: content.meta.description,
-    alternates: {
-      languages: {
-        "zh-CN": "/zh",
-        en: "/en"
-      }
-    }
-  };
+  return buildPageMetadata({
+    locale,
+    title: content.pageMeta.home.title,
+    description: content.pageMeta.home.description,
+    keywords: content.pageMeta.home.keywords
+  });
 }
 
 export default function LocaleLayout({ children, params }: LocaleLayoutProps) {

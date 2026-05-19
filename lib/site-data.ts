@@ -5,7 +5,9 @@ export const siteConfig: SiteConfig = {
   strapline: "Wedding stories, refined services, and planning essentials.",
   email: "hello@marrystudio.co",
   instagram: "@marry.editorial",
-  wechat: "MarryStudio"
+  wechat: "MarryStudio",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://marry.local",
+  defaultOgImage: "/images/hero-main.jpg"
 };
 
 export const localeContent: Record<Locale, LocaleContent> = {
@@ -14,6 +16,38 @@ export const localeContent: Record<Locale, LocaleContent> = {
     meta: {
       title: "Marry 婚礼主题平台",
       description: "以浪漫叙事、婚礼灵感、服务展示与轻量工具为核心的中英双语婚礼主题网站。"
+    },
+    pageMeta: {
+      home: {
+        title: "Marry 婚礼灵感、婚礼服务与备婚工具平台",
+        description: "Marry 以婚礼故事、灵感画册、策划服务与轻量备婚工具，帮助新人从审美想象走到真实落地。",
+        keywords: ["婚礼策划", "婚礼灵感", "备婚工具", "婚礼故事", "婚礼服务"]
+      },
+      stories: {
+        title: "婚礼故事与真实新人叙事",
+        description: "浏览更具电影感的婚礼故事内容，感受场地气氛、誓言瞬间与宾客情绪如何共同构成一场婚礼。",
+        keywords: ["婚礼故事", "真实婚礼", "婚礼灵感", "婚礼纪实", "婚礼内容"]
+      },
+      inspiration: {
+        title: "婚礼灵感画册与审美方向",
+        description: "从场地、花艺、配色、请柬到晚宴氛围，查看 Marry 整理的婚礼灵感专题与视觉方向。",
+        keywords: ["婚礼灵感", "婚礼配色", "婚礼花艺", "婚礼视觉", "婚礼场地"]
+      },
+      services: {
+        title: "婚礼策划服务、套餐与案例",
+        description: "查看 Marry 的婚礼整体策划、视觉设计、影像协作、合作流程、案例片段与常见问题。",
+        keywords: ["婚礼策划服务", "婚礼套餐", "婚礼案例", "婚礼顾问", "婚礼流程"]
+      },
+      tools: {
+        title: "备婚清单、预算、时间线与宾客管理工具",
+        description: "使用可本地保存的婚礼清单、预算规划器、婚礼时间线与宾客管理工具，建立更清楚的备婚节奏。",
+        keywords: ["备婚清单", "婚礼预算", "婚礼时间线", "宾客管理", "婚礼工具"]
+      },
+      about: {
+        title: "关于 Marry 与婚礼咨询入口",
+        description: "了解 Marry 的品牌理念、联系方式与婚礼咨询方式，并通过表单或邮件开启第一次沟通。",
+        keywords: ["婚礼咨询", "婚礼联系", "婚礼品牌", "婚礼合作", "Marry"]
+      }
     },
     nav: [
       { href: "/zh", label: "首页" },
@@ -97,7 +131,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Stories",
       title: "每一场婚礼都像一部短片，真正留下来的，是人与人之间的气味、光线与停顿。",
       body:
-        "这一页展示 Marry 的故事型内容结构。它可以承载真实新人、主题婚礼、旅行婚礼或周年誓言，语气保持克制、缓慢、有画面感。",
+        "这里收纳的是更接近真实婚礼质地的内容片段。我们不急着把婚礼写成“完美流程”，而是更在意人如何抵达、如何停留、如何记住彼此。",
       spotlightEyebrow: "Story Spotlight",
       spotlightTitle: "在海边交换誓言之前，他们先花了三个月决定，婚礼应该像一次温柔的晚宴。",
       spotlightBody:
@@ -107,7 +141,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Inspiration",
       title: "灵感不止是配色和花艺，更是空间、温度、音乐与节奏彼此相衬。",
       body:
-        "这一页作为内容型画册，适合持续增加主题专栏。V1 先用几组静态专题建立审美方向，后续可扩展成编辑内容库。",
+        "这一页像一本持续展开的婚礼画册。每个主题都不是单一装饰建议，而是一整种关于空间、光线、材质与宾客感受的提案。",
       themes: [
         { title: "庄园午后", description: "奶油白、黄铜、低饱和花束与长桌烛光。" },
         { title: "海边薄暮", description: "盐感空气、柔雾粉调、自然风线条与流动纱幕。" },
@@ -467,6 +501,38 @@ export const localeContent: Record<Locale, LocaleContent> = {
       description:
         "A bilingual wedding-inspired platform shaped around editorial stories, refined services, and lightweight planning tools."
     },
+    pageMeta: {
+      home: {
+        title: "Marry Wedding Inspiration, Services, and Planning Tools",
+        description: "Marry brings together editorial wedding stories, refined planning services, and practical tools for couples shaping a celebration with taste and clarity.",
+        keywords: ["wedding planning", "wedding inspiration", "wedding tools", "wedding stories", "wedding services"]
+      },
+      stories: {
+        title: "Wedding Stories and Editorial Love Stories",
+        description: "Explore story-led wedding content shaped by atmosphere, vows, guest emotion, and the quiet details that make a celebration memorable.",
+        keywords: ["wedding stories", "real weddings", "editorial weddings", "wedding inspiration", "love stories"]
+      },
+      inspiration: {
+        title: "Wedding Inspiration, Palettes, and Editorial Themes",
+        description: "Browse Marry's wedding inspiration themes across venues, florals, palettes, printed details, and dinner-party mood.",
+        keywords: ["wedding inspiration", "wedding palette", "wedding flowers", "wedding decor", "wedding venue ideas"]
+      },
+      services: {
+        title: "Wedding Planning Services, Packages, and Case Notes",
+        description: "See Marry's planning services, design direction, collaboration process, case studies, and FAQ for couples planning a wedding with intention.",
+        keywords: ["wedding planner", "wedding services", "wedding packages", "wedding case study", "design direction"]
+      },
+      tools: {
+        title: "Wedding Checklist, Budget, Timeline, and Guest Tools",
+        description: "Use Marry's locally saved checklist, budget planner, timeline planner, and guest manager to make wedding planning more visible and calm.",
+        keywords: ["wedding checklist", "wedding budget", "wedding timeline", "guest list tool", "wedding planning tools"]
+      },
+      about: {
+        title: "About Marry and Wedding Inquiry Contact",
+        description: "Learn about Marry's brand philosophy, contact details, and inquiry flow, then begin the conversation through form or email.",
+        keywords: ["wedding inquiry", "contact wedding planner", "about wedding brand", "Marry weddings", "wedding contact"]
+      }
+    },
     nav: [
       { href: "/en", label: "Home" },
       { href: "/en/stories", label: "Stories" },
@@ -549,7 +615,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Stories",
       title: "Every wedding carries the rhythm of a short film. What lingers is light, scent, pauses, and the way people look at one another.",
       body:
-        "This page is built for story-led content. It can hold real couples, themed celebrations, destination weddings, or vow renewals while keeping the tone restrained and cinematic.",
+        "This is where Marry holds the more human texture of a wedding. Instead of flattening the day into a perfect checklist, we stay close to arrival, atmosphere, pauses, and memory.",
       spotlightEyebrow: "Story Spotlight",
       spotlightTitle: "Before exchanging vows by the sea, they spent three months deciding that the wedding should feel like a generous dinner party.",
       spotlightBody:
@@ -559,7 +625,7 @@ export const localeContent: Record<Locale, LocaleContent> = {
       eyebrow: "Inspiration",
       title: "Inspiration is not only palette and florals. It is atmosphere, music, texture, and the pacing of a room.",
       body:
-        "This page works like an editorial album. V1 uses a handful of static themes to establish direction, while leaving room for a richer content library later on.",
+        "Think of this page as an editorial album in progress. Each theme suggests not only how a wedding looks, but how a room moves, feels, and holds people together.",
       themes: [
         { title: "Manor Afternoon", description: "Cream tones, brass details, low-saturation florals, and candlelit long tables." },
         { title: "Coastal Dusk", description: "Salt air, veiled blush tones, flowing textiles, and wind-shaped lines." },

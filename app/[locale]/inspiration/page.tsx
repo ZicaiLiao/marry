@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
+import { StructuredData } from "@/components/structured-data";
 import { isLocale } from "@/lib/i18n";
-import { getLocaleContent } from "@/lib/site-data";
+import { getLocaleContent, siteConfig } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 type InspirationPageProps = {
   params: {
@@ -7,15 +10,41 @@ type InspirationPageProps = {
   };
 };
 
+export function generateMetadata({ params }: InspirationPageProps): Metadata {
+  if (!isLocale(params.locale)) {
+    return {};
+  }
+
+  const content = getLocaleContent(params.locale);
+
+  return buildPageMetadata({
+    locale: params.locale,
+    slug: "inspiration",
+    title: content.pageMeta.inspiration.title,
+    description: content.pageMeta.inspiration.description,
+    keywords: content.pageMeta.inspiration.keywords,
+    image: "/images/hero-detail.jpg"
+  });
+}
+
 export default function InspirationPage({ params }: InspirationPageProps) {
   if (!isLocale(params.locale)) {
     return null;
   }
 
   const content = getLocaleContent(params.locale);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: content.pageMeta.inspiration.title,
+    description: content.pageMeta.inspiration.description,
+    url: `${siteConfig.siteUrl}/${params.locale}/inspiration`,
+    inLanguage: params.locale
+  };
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <section className="container page-intro">
         <span className="page-intro__eyebrow">{content.inspirationPage.eyebrow}</span>
         <h1 className="page-intro__title">{content.inspirationPage.title}</h1>

@@ -1,11 +1,14 @@
+import type { Metadata } from "next";
 import { CTASection } from "@/components/cta-section";
 import { Hero } from "@/components/hero";
 import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
 import { StoryCard } from "@/components/story-card";
+import { StructuredData } from "@/components/structured-data";
 import { ToolPreviewCard } from "@/components/tool-preview-card";
 import { isLocale } from "@/lib/i18n";
-import { getLocaleContent } from "@/lib/site-data";
+import { getLocaleContent, siteConfig } from "@/lib/site-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 type LocalePageProps = {
   params: {
@@ -13,15 +16,50 @@ type LocalePageProps = {
   };
 };
 
+export function generateMetadata({ params }: LocalePageProps): Metadata {
+  if (!isLocale(params.locale)) {
+    return {};
+  }
+
+  const content = getLocaleContent(params.locale);
+
+  return buildPageMetadata({
+    locale: params.locale,
+    title: content.pageMeta.home.title,
+    description: content.pageMeta.home.description,
+    keywords: content.pageMeta.home.keywords
+  });
+}
+
 export default function LocaleHomePage({ params }: LocalePageProps) {
   if (!isLocale(params.locale)) {
     return null;
   }
 
   const content = getLocaleContent(params.locale);
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: siteConfig.brand,
+      url: `${siteConfig.siteUrl}/${params.locale}`,
+      description: content.pageMeta.home.description,
+      inLanguage: params.locale
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: siteConfig.brand,
+      url: siteConfig.siteUrl,
+      email: siteConfig.email,
+      sameAs: [`https://instagram.com/${siteConfig.instagram.replace("@", "")}`],
+      description: content.pageMeta.home.description
+    }
+  ];
 
   return (
     <>
+      <StructuredData data={structuredData} />
       <Hero hero={content.home.hero} />
 
       <section className="container section">
@@ -69,7 +107,11 @@ export default function LocaleHomePage({ params }: LocalePageProps) {
         <SectionHeader {...content.home.tools} />
         <div className="tool-grid">
           {content.tools.map((tool) => (
-            <ToolPreviewCard key={tool.title} tool={tool} />
+            <ToolPreviewCard
+              key={tool.title}
+              tool={tool}
+              linkLabel={params.locale === "zh" ? "打开工具" : "Open tool"}
+            />
           ))}
         </div>
       </section>

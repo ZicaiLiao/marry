@@ -67,9 +67,10 @@ npm run start
 
 ## Environment Variables
 
-`Resend` 表单提交需要以下变量：
+SEO 与表单提交相关变量：
 
 ```env
+NEXT_PUBLIC_SITE_URL="https://marry.local"
 RESEND_API_KEY=
 RESEND_FROM_EMAIL="Marry <onboarding@resend.dev>"
 RESEND_TO_EMAIL="hello@marrystudio.co"
@@ -77,6 +78,10 @@ RESEND_TO_EMAIL="hello@marrystudio.co"
 
 说明：
 
+- `NEXT_PUBLIC_SITE_URL`
+  - 站点正式访问地址
+  - 用于 `metadataBase`、canonical、Open Graph、`sitemap.xml`
+  - 正式部署时请改成你的真实域名
 - `RESEND_API_KEY`
   - Resend 后台生成的 API Key
 - `RESEND_FROM_EMAIL`
@@ -87,6 +92,17 @@ RESEND_TO_EMAIL="hello@marrystudio.co"
   - 接收咨询邮件的邮箱
 
 如果没有配置 `RESEND_API_KEY`，前端会提示邮件服务尚未配置，并保留邮件兜底入口。
+
+## SEO
+
+当前版本已经包含基础 SEO 能力：
+
+- 页面级 `title`、`description`、`keywords`
+- 中英双语 `canonical` 与 `hreflang`
+- Open Graph 与 Twitter 分享卡片
+- `robots.txt`
+- `sitemap.xml`
+- 首页、服务页、关于页等结构化数据
 
 ## Available Scripts
 

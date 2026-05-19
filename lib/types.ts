@@ -82,6 +82,8 @@ export type SiteConfig = {
   email: string;
   instagram: string;
   wechat: string;
+  siteUrl: string;
+  defaultOgImage: string;
 };
 
 export type LocaleContent = {
@@ -89,6 +91,38 @@ export type LocaleContent = {
   meta: {
     title: string;
     description: string;
+  };
+  pageMeta: {
+    home: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+    stories: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+    inspiration: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+    services: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+    tools: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+    about: {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
   };
   nav: NavItem[];
   home: {

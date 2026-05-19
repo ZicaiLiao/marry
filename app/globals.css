@@ -553,8 +553,16 @@ img {
 .mosaic-card {
   min-height: 240px;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 247, 234, 0.6), transparent 20%),
-    linear-gradient(160deg, #e2c6bc 0%, #c68d7f 45%, #7a4f4d 100%);
+    linear-gradient(180deg, rgba(49, 30, 29, 0.14), rgba(49, 30, 29, 0.28)),
+    radial-gradient(circle at 18% 18%, rgba(255, 247, 234, 0.24), transparent 20%),
+    center / cover no-repeat url("/images/story-cover.jpg");
+}
+
+.story-spotlight__media {
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, rgba(49, 30, 29, 0.12), rgba(49, 30, 29, 0.28)),
+    center / cover no-repeat url("/images/hero-detail.jpg");
 }
 
 .story-card__content,
@@ -623,10 +631,25 @@ img {
 
 .mosaic-card--tall {
   min-height: 520px;
+  background:
+    linear-gradient(180deg, rgba(49, 30, 29, 0.16), rgba(49, 30, 29, 0.28)),
+    center / cover no-repeat url("/images/hero-main.jpg");
 }
 
 .mosaic-card--short {
   min-height: 250px;
+}
+
+.mosaic-stack .mosaic-card--short:first-child {
+  background:
+    linear-gradient(180deg, rgba(49, 30, 29, 0.16), rgba(49, 30, 29, 0.28)),
+    center / cover no-repeat url("/images/hero-secondary.jpg");
+}
+
+.mosaic-stack .mosaic-card--short:last-child {
+  background:
+    linear-gradient(180deg, rgba(49, 30, 29, 0.14), rgba(49, 30, 29, 0.28)),
+    center / cover no-repeat url("/images/hero-detail.jpg");
 }
 
 .service-card {

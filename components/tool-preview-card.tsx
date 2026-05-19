@@ -3,9 +3,10 @@ import { ToolItem } from "@/lib/types";
 
 type ToolPreviewCardProps = {
   tool: ToolItem;
+  linkLabel: string;
 };
 
-export function ToolPreviewCard({ tool }: ToolPreviewCardProps) {
+export function ToolPreviewCard({ tool, linkLabel }: ToolPreviewCardProps) {
   return (
     <article className="tool-card">
       <span className="eyebrow">{tool.status}</span>
@@ -19,7 +20,7 @@ export function ToolPreviewCard({ tool }: ToolPreviewCardProps) {
         ))}
       </div>
       <Link href={tool.href} className="tool-card__link">
-        Open tool →
+        {linkLabel} →
       </Link>
     </article>
   );
